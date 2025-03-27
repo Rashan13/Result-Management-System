@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subjects | Result Management System</title>
+    <link rel="stylesheet" href="stdetails.css">
+</head>
+<body>
+    <div class="sidebar">
+        <h2>RMS | Admin</h2>
+        <ul>
+            <li><a href="dashboard.php">Dashboard</a></li>
+            <li><a href="stintakes.html">Student Intakes</a></li>
+			<li><a href="modules.html" class="active">Modules</a></li>
+            <li><a href="stdetails.html">Students</a></li>
+            <li><a href="#">Result</a></li>
+            <li><a href="notice.html">Notices</a></li>
+            <li><a href="admin_pw.html">Admin Change Password</a></li>
+        </ul>
+    </div>
+
+    <!-- Main content -->
+    <div class="p-4" style="width: 100%;">
+        <h2>Modules</h2>
+
+        <!-- Add New Module Form -->
+        <div class="add-subject mt-4">
+            <h3>Add New Module</h3>
+            <form action="add_subject.php" method="post">
+                <div class="form-group">
+                    <label for="subject-code">Module Code</label>
+                    <input type="text" id="subject-code" name="subject_code" class="form-control" placeholder="Enter Subject Code" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject-name">Module Name</label>
+                    <input type="text" id="subject-name" name="subject_name" class="form-control" placeholder="Enter Subject Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject-credit">Credits</label>
+                    <input type="number" id="subject-credit" name="subject_credit" class="form-control" placeholder="Enter Credits" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Add Module</button>
+            </form>
+        </div>
+
+        <!-- Module List Table -->
+        <div class="subject-list mt-5">
+            <h3>Module List</h3>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Module Code</th>
+                        <th>Module Name</th>
+                        <th>Credits</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>CS101</td>
+                        <td>Introduction to Computer Science</td>
+                        <td>3</td>
+                        <td>
+                            <button class="btn btn-sm btn-primary">Edit</button>
+                            <button class="btn btn-sm btn-danger">Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>MTH102</td>
+                        <td>Calculus I</td>
+                        <td>4</td>
+                        <td>
+                            <button class="btn btn-sm btn-primary">Edit</button>
+                            <button class="btn btn-sm btn-danger">Delete</button>
+                        </td>
+                    </tr>
+                    <!-- Add more subjects as needed -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</body>
+</html>

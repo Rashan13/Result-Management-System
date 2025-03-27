@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result System</title>
+    <link rel="stylesheet" href="exam.css">
+</head>
+<body>
+
+    <!-- Back to Home Button -->
+    <a href="dashboard.php" class="back-home">
+        <button>Back to Home</button>
+    </a>
+
+    
+
+    <div class="main-content">
+        <header>
+            <h2>Results</h2>
+        </header>
+
+        <!-- Add New Result Form -->
+        <div class="add-result-form">
+            <form action="add_result2.php" method="post">
+                <input type="text" name="student_code" placeholder="Student Code" required>
+                <input type="text" name="student_name" placeholder="Student Name" required>
+
+                <input type="text" name="information_technology_concepts" placeholder="Information Technology Concepts" required>
+                <input type="text" name="fundamentals_of_programming" placeholder="Fundamentals of Programming" required>
+                <input type="text" name="fundamental_of_visual computing" placeholder="Fundamental of Visual Computing" required>
+                <input type="text" name="mathematics" placeholder="Mathematics" required>
+                <input type="text" name="fundamental_of_electrical_engineering" placeholder="Fundamental of Electrical Engineering" required>
+                <input type="text" name="programming_laboratory" placeholder="Programming Laboratory" required>
+                <input type="number" step="0.01" name="sgpa" placeholder="SGPA" required>
+                <input type="number" step="0.01" name="ygpa" placeholder="YGPA" required>
+
+                <button type="submit">Add Result</button>
+                <a href="dashboard.php" class="cancel-btn">Cancel</a>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

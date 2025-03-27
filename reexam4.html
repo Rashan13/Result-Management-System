@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result System</title>
+    <link rel="stylesheet" href="exam.css">
+</head>
+<body>
+
+    <!-- Back to Home Button -->
+    <a href="dashboard.php" class="back-home">
+        <button>Back to Home</button>
+    </a>
+
+    
+
+    <div class="main-content">
+        <header>
+            <h2>Results</h2>
+        </header>
+
+        <!-- Add New Result Form -->
+        <div class="add-result-form">
+            <form action="add_result.php" method="post">
+                <input type="text" name="student_code" placeholder="Student Code" required>
+                <input type="text" name="student_name" placeholder="Student Name" required>
+
+                <input type="text" name="System Administration and Maintenance " placeholder="System Administration and Maintenance " required>
+                <input type="text" name="Python Programming" placeholder="Python Programming" required>
+                <input type="text" name="Career Development Plan" placeholder="Career Development Plan" required>
+                <input type="text" name="Systems Analysis and Design" placeholder="Systems Analysis and Design" required>
+                <input type="text" name="Graphic Designing and Animation" placeholder="Graphic Designing and Animation" required>
+                <input type="text" name="Open Source Development " placeholder="Open Source Development " required>
+                <input type="text" name="Skill Development Project (Group)" placeholder="Skill Development Project (Group)" required>
+                <input type="number" step="0.01" name="sgpa" placeholder="SGPA" required>
+                <input type="number" step="0.01" name="ygpa" placeholder="YGPA" required>
+
+                <button type="submit">Add Result</button>
+                <a href="dashboard.php" class="cancel-btn">Cancel</a>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

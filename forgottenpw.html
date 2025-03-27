@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forgotten Password - Result Management System</title>
+    <link rel="stylesheet" href="forgot.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Result Management System - KDU</h1>
+            <nav>
+                <a href="index.html">Home</a> 
+                <span>/ Forgotten password</span>
+            </nav>
+        </header>
+
+        <main>
+            <h2>To reset your password, submit your username or your email address below. If we can find you in the database, an email will be sent to your email address, with instructions on how to get access again.</h2>
+            <div class="form-section">
+                <h3>Search by username</h3>
+                <!--database connect karanne one-->
+                <form action="reset_by_username.php" method="post">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required>
+                    <button type="submit">Search</button>
+                </form>
+            </div>
+
+            <div class="form-section">
+                <h3>Search by email address</h3>
+                <form action="reset_by_email.php" method="post">
+                    <label for="email">Email address</label>
+                    <input type="email" id="email" name="email" required>
+                    <button type="submit">Search</button>
+                </form>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Form</title>
+    <link rel="stylesheet" href="new.css">
+    <style>
+        .password-strength {
+            margin-top: 5px;
+            padding: 5px;
+            border-radius: 3px;
+            color: #fff;
+        }
+        .password-strength.weak {
+            background-color: #dc3545;
+        }
+        .password-strength.medium {
+            background-color: #ffc107;
+        }
+        .password-strength.strong {
+            background-color: #28a745;
+        }
+
+        .message {
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 3px;
+            display: none;
+        }
+
+        .message.success {
+            background-color: #28a745;
+            color: #fff;
+        }
+
+        .message.error {
+            background-color: #dc3545;
+            color: #fff;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .add-user-button,
+        .cancel-button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .add-user-button {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        .cancel-button {
+            background-color: #007bff;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <form id="user-form">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="text" id="email" name="email">
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password">
+                <div id="password-strength" class="password-strength">
+                    <span>Weak</span>
+                </div>
+                <button type="button" class="password-visibility" onclick="togglePasswordVisibility()">Hide</button>
+            </div>
+
+            <div class="form-group">
+                <label for="confirm-password">Confirm Password</label>
+                <input type="password" id="confirm-password" name="confirm-password">
+                <div id="password-match" style="margin-top: 5px; color: #dc3545; display: none;">
+                    Passwords do not match
+                </div>
+            </div>
+
+            <div class="form-group">
+                <input type="checkbox" id="user-notification" name="user-notification" checked>
+                <label for="user-notification">Send the new user an email about their account.</label>
+            </div>
+
+            <div class="form-group">
+                <label for="role">Role</label>
+                <select id="role" name="role">
+                    <option value="Addministrator">Addministrator</option>
+                    <option value="Lecture">Lecture</option>
+                </select>
+            </div>
+
+            <div class="button-group">
+                <button type="button" class="add-user-button" onclick="submitForm()">Add New User</button>
+                <button type="button" class="cancel-button" onclick="cancelForm()">Cancel</button>
+              
+            </div>
+        </form>
+        <div id="message" class="message"></div>
+    </div>
+
+    <script>
+        const passwordInput = document.getElementById('password');
+        const confirmPasswordInput = document.getElementById('confirm-password');
+        const passwordStrength = document.getElementById('password-strength');
+        const passwordMatch = document.getElementById('password-match');
+        const messageDiv = document.getElementById('message');
+
+        passwordInput.addEventListener('input', function() {
+            const strength = checkPasswordStrength(passwordInput.value);
+            updateStrengthDisplay(strength);
+            checkPasswordMatch();
+        });
+
+        confirmPasswordInput.addEventListener('input', checkPasswordMatch);
+
+        function checkPasswordStrength(password) {
+            let strength = 0;
+
+            if (password.length >= 8) strength++;
+            if (/[A-Z]/.test(password)) strength++;
+            if (/[a-z]/.test(password)) strength++;
+            if (/[0-9]/.test(password)) strength++;
+            if (/[\W]/.test(password)) strength++;
+
+            if (strength <= 2) return 'weak';
+            if (strength <= 4) return 'medium';
+            return 'strong';
+        }
+
+        function updateStrengthDisplay(strength) {
+            passwordStrength.textContent = strength.charAt(0).toUpperCase() + strength.slice(1);
+            passwordStrength.className = `password-strength ${strength}`;
+        }
+
+        function togglePasswordVisibility() {
+            const type = passwordInput.type === 'password' ? 'text' : 'password';
+            passwordInput.type = type;
+            confirmPasswordInput.type = type;
+            document.querySelector('.password-visibility').textContent = type === 'password' ? 'Show' : 'Hide';
+        }
+
+        function checkPasswordMatch() {
+            if (passwordInput.value !== confirmPasswordInput.value) {
+                passwordMatch.style.display = 'block';
+            } else {
+                passwordMatch.style.display = 'none';
+            }
+        }
+
+        function submitForm() {
+            if (passwordInput.value !== confirmPasswordInput.value) {
+                messageDiv.textContent = 'Passwords do not match';
+                messageDiv.className = 'message error';
+                messageDiv.style.display = 'block';
+                return;
+            }
+
+            const formData = new FormData(document.getElementById('user-form'));
+
+            fetch('add_user.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    messageDiv.textContent = 'Database updated successfully';
+                    messageDiv.className = 'message success';
+                } else {
+                    messageDiv.textContent = 'Failed to update database';
+                    messageDiv.className = 'message error';
+                }
+                messageDiv.style.display = 'block';
+            })
+            .catch(error => {
+                messageDiv.textContent = 'An error occurred: ' + error.message;
+                messageDiv.className = 'message error';
+                messageDiv.style.display = 'block';
+            });
+        }
+
+        function cancelForm() {
+            // Clear all input fields
+            document.getElementById('user-form').reset();
+            window.location.href = 'dashboard.php';
+            // Hide any displayed messages
+            messageDiv.style.display = 'none';
+            passwordMatch.style.display = 'none';
+            passwordStrength.className = 'password-strength';
+            passwordStrength.textContent = 'Weak';
+        }
+    </script>
+</body>
+</html>

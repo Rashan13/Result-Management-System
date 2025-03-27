@@ -1,0 +1,145 @@
+/* Basic Reset */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background-color: #f3f5f9;
+}
+
+/* Header */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #000c29;
+    color: white;
+    padding: 35px;
+}
+
+.header .logo {
+    width: 60px;
+    margin-right: 15px;
+}
+
+.header-text {
+    flex: 1;
+    text-align: left;
+}
+
+.header-text h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+.header-text p {
+    font-size: 14px;
+    margin: 0;
+}
+
+.header-right {
+    text-align: right;
+}
+
+.header-right h2 {
+    margin: 0;
+    font-size: 35px;
+    color: #ffffff;
+}
+
+/* Login Container */
+.login-container {
+    width: 400px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.login-container h2 {
+    text-align: center;
+    color: #000c29;
+    font-size: 33px;
+    margin-bottom: 10px;
+}
+
+.login-container label {
+    display: block;
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+.login-container input[type="text"],
+.login-container input[type="password"] {
+    width: 95%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.login-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #000c29;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.login-container button:hover {
+    background-color: #001547;
+}
+
+.options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.options .remember-me {
+    display: flex;
+    align-items: center;
+    color: #333;
+}
+
+.options .forgot {
+    font-size: 14px;
+    color: #000c29;
+    text-decoration: none;
+}
+
+.options .forgot:hover {
+    text-decoration: underline;
+}
+
+.cookies {
+    text-align: center;
+    font-size: 12px;
+    color: #666;
+    margin-top: 15px;
+}
+
+/* Footer */
+footer {
+    background-color: #000c29;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+}

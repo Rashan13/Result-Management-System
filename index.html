@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result Management System</title>
+    <link rel="stylesheet" href="styleindex.css">
+</head>  
+<body>
+    <div class="header">
+        <img src="kdu_logo.png" alt="KDU Logo" class="logo">
+        <div class="header-text">
+            <h1>General Sir John Kotelawala Defence University</h1>
+            <p>For the Motherland Forever | සිය රටටමයි කවදත්</p>
+        </div>
+        <div class="header-right">
+            <h2>Result Management System</h2>
+        </div>
+    </div>
+
+    <div class="login-container">
+        <h2>Login</h2>
+        <form action="login.php" method="post">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" placeholder="Enter Username" required>
+            
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Enter Password" required>
+            
+            <div class="options">
+                <div class="remember-me">
+                    <input type="checkbox" id="remember-me" name="remember-me">
+                    <label for="remember-me">Remember me</label>
+                </div>
+                <a href="forgottenpw.html" class="forgot">Forgot Password?</a>
+            </div>
+
+            <button type="submit">Login</button>
+            <button type="button" onclick="viewResults()">View Result</button>
+            <p class="cookies">Cookies must be enabled in your browser</p>
+        </form>
+    </div>
+    
+    <!-- Footer Section -->
+    <footer>
+        <p>© 2024 Sir John Kotelawala Defence University. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function viewResults() {
+            window.location.href = "view_results.php";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,125 @@
+/* General Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e5e9ec;
+    min-height: 100vh;
+    color: #333;
+}
+
+/* Main Content */
+.main-content {
+    background-color: #f4f6f8;
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+/* Back to Home button styling */
+a.back-home {
+    text-decoration: none; /* Remove underline */
+    position: absolute;
+    top: 35px;
+    right: 30px;
+}
+
+a.back-home button {
+    background-color: #C0CED9; /* Green background */
+    color: blcak;              /* White text */
+    padding: 8px 15px;         /* Padding */
+    border: none;              /* No border */
+    border-radius: 5px;        /* Rounded corners */
+    font-size: 14px;           /* Font size */
+    cursor: pointer;           /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+/* Header */
+h2 {
+    color: #1c2938;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Form Group */
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+/* Input Fields */
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s;
+}
+
+input[type="password"]:focus {
+    border-color: #1c2938;
+    outline: none;
+}
+
+/* Button Styles */
+.btn {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.btn.primary {
+    background-color: #1c2938;
+    color: #fff;
+}
+
+.btn.primary:hover {
+    background-color: #2f3f50;
+}
+
+.btn.cancel {
+    background-color: #d9534f;
+    color: #fff;
+}
+
+.btn.cancel:hover {
+    background-color: #c9302c;
+}
+
+/* Message Styles */
+.message {
+    font-size: 14px;
+    margin-top: 5px;
+    text-align: center;
+}
+
+.success {
+    color: green;
+}
+
+.error {
+    color: red;
+}

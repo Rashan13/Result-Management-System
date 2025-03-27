@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result System</title>
+    <link rel="stylesheet" href="exam.css">
+</head>
+<body>
+    <div class="main-content">
+        <header>
+            <h2>Results</h2>
+        </header>
+
+        <!-- Add New Result Form -->
+        <div class="add-result-form">
+            <form action="add_result.php" method="post">
+                <input type="text" name="student_code" placeholder="Student Code" required>
+                <input type="text" name="student_name" placeholder="Student Name" required>
+
+                <!-- Semester Selection 
+                <select name="semester" required>
+                    <option value="" disabled selected>Select Semester</option>
+                    <option value="Semester 1">Semester 1</option>
+                    <option value="Semester 2">Semester 2</option>
+                    <option value="Semester 3">Semester 3</option>
+                    <option value="Semester 4">Semester 4</option>
+                    <option value="Semester 5">Semester 5</option>
+                    <option value="Semester 6">Semester 6</option>
+                    <option value="Semester 7">Semester 7</option>
+                    <option value="Semester 8">Semester 8</option>
+                </select>-->
+
+                <input type="text" name="principles_of_management" placeholder="Principles of Management" required>
+                <input type="text" name="calculus_i" placeholder="Calculus I" required>
+                <input type="text" name="data_structure_algorithm" placeholder="Data Structure and Algorithm" required>
+                <input type="text" name="data_communication" placeholder="Data Communication & Networking" required>
+                <input type="text" name="hci" placeholder="HCI" required>
+                <input type="text" name="oop" placeholder="OOP" required>
+                <input type="text" name="se" placeholder="SE" required>
+                <input type="number" step="0.01" name="sgpa" placeholder="SGPA" required>
+                <input type="number" step="0.01" name="ygpa" placeholder="YGPA" required>
+
+                <button type="submit">Add Result</button>
+                <a href="dashboard.php" class="cancel-btn">Cancel</a>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

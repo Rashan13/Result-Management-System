@@ -1,0 +1,108 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students Details</title>
+   
+    <link rel="stylesheet" href="stdetails.css">
+</head>
+<body>
+    <div class="sidebar">
+        <h2>RMS | Admin</h2>
+        <ul>
+            <li><a href="dashboard.php">Dashboard</a></li>
+            <li><a href="stintakes.html">Student Intakes</a></li>
+			<li><a href="modules.html">Modules</a></li>
+            <li><a href="stdetails.html" class="active">Students</a></li>
+            <li><a href="#">Result</a></li>
+            <li><a href="notice.html">Notices</a></li>
+            <li><a href="admin_pw.html">Admin Change Password</a></li>
+        </ul>
+    </div>
+
+    <!-- Main content -->
+    <div class="p-4" style="width: 100%;">
+        <h2>Students Details</h2>
+        
+        <!-- Undergraduate Info -->
+        <div class="undergraduate-info">
+            <h3>Student Information</h3>
+            <table class="table table-bordered">
+                <tr>
+                    <th>Student ID</th>
+                    <td>789012</td>
+                </tr>
+                <tr>
+                    <th>Name</th>
+                    <td>Jane Smith</td>
+                </tr>
+                <tr>
+                    <th>Major</th>
+                    <td>Computer Science</td>
+                </tr>
+                <tr>
+                    <th>Year of Study</th>
+                    <td>3rd Year</td>
+                </tr>
+                <tr>
+                    <th>GPA</th>
+                    <td>3.8</td>
+                </tr>
+                <tr>
+                    <th>Email</th>
+                    <td>janesmith@example.com</td>
+                </tr>
+                <tr>
+                    <th>Phone</th>
+                    <td>+9876543210</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Edit Undergraduate Form -->
+        <div class="edit-undergraduate mt-4">
+            <h3>Edit Student Details</h3>
+            <form action="update_undergraduate.php" method="post">
+                <div class="form-group">
+                    <label for="student-id">Student ID</label>
+                    <input type="text" id="student-id" name="student_id" class="form-control" value="789012" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="student-name">Name</label>
+                    <input type="text" id="student-name" name="student_name" class="form-control" value="Jane Smith">
+                </div>
+                <div class="form-group">
+                    <label for="student-major">Major</label>
+                    <input type="text" id="student-major" name="student_major" class="form-control" value="Computer Science">
+                </div>
+                <div class="form-group">
+                    <label for="student-year">Year of Study</label>
+                    <select id="student-year" name="student_year" class="form-control">
+                        <option value="1st Year">1st Year</option>
+                        <option value="2nd Year">2nd Year</option>
+                        <option value="3rd Year" selected>3rd Year</option>
+                        <option value="4th Year">4th Year</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="student-gpa">GPA</label>
+                    <input type="text" id="student-gpa" name="student_gpa" class="form-control" value="3.8">
+                </div>
+                <div class="form-group">
+                    <label for="student-email">Email</label>
+                    <input type="email" id="student-email" name="student_email" class="form-control" value="janesmith@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="student-phone">Phone</label>
+                    <input type="text" id="student-phone" name="student_phone" class="form-control" value="+9876543210">
+                </div>
+                <button type="submit" class="btn btn-primary">Update Details</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

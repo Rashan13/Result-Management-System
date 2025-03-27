@@ -1,0 +1,80 @@
+/* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Header styling */
+header {
+    background-color: #f4f4f4;
+    color: #000C29;
+    padding: 15px 10px;
+	font-size: 20px;
+    text-align: Left;
+    position: relative;
+}
+
+/* Back to Home button styling */
+a.back-home {
+    text-decoration: none; /* Remove underline */
+    position: absolute;
+    top: 35px;
+    right: 30px;
+}
+
+a.back-home button {
+    background-color: #C0CED9; /* Green background */
+    color: blcak;              /* White text */
+    padding: 8px 15px;         /* Padding */
+    border: none;              /* No border */
+    border-radius: 5px;        /* Rounded corners */
+    font-size: 14px;           /* Font size */
+    cursor: pointer;           /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+
+/* Section styling */
+section {
+    padding: 20px;
+    margin: 20px auto;
+    background-color: white;
+    max-width: 800px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading and text styling */
+h2 {
+    color: #333;
+}
+
+p {
+    color: #555;
+    line-height: 1.6;
+}
+
+/* List and image styling */
+ul {
+    list-style-type: disc;
+    margin: 10px 0 20px 20px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+}
+
+/* Preformatted text styling */
+pre {
+    background-color: #eee;
+    padding: 10px;
+    border-radius: 5px;
+    overflow-x: auto;
+    margin: 10px 0;
+    font-family: monospace;
+}
